@@ -1,0 +1,100 @@
+
+clear
+units             metal
+atom_style        atomic
+boundary            p p f
+# ------------------ ATOM DEFINITION -------------------
+
+processors 32 32 1
+
+
+read_data substrate_heated.data
+
+
+pair_style uf3 3
+pair_coeff * * MoS2.UF3 Mo S
+
+replicate 2 2 1 
+
+
+
+    timestep     0.001
+	
+dump    1 all custom 5000 dump_growth.xyz id type x y z
+
+	variable zhi equal zhi
+	variable zlo equal zlo
+	variable vacc equal 200
+	
+change_box all z final $(v_zlo-10) $(v_zhi + v_vacc) boundary p p f units box
+
+
+	region		1 block EDGE EDGE EDGE EDGE EDGE 8 units box  	#Bottom
+	region		2 block EDGE EDGE EDGE EDGE 8.2 EDGE units box
+    region		3 block EDGE EDGE EDGE EDGE 28 46 units box 	  	#Fix langevin
+	region		4 block EDGE EDGE EDGE EDGE 60 120 units box   	#Substrate surface region
+	region      10 block EDGE EDGE EDGE EDGE 160 220 units box    #region for atom creation
+	region		20 block EDGE EDGE EDGE EDGE 155 EDGE units box 
+	
+	group       bottom region 1
+	group       free region 2
+	group       heat1 region 3
+	group       heat2 dynamic all region 4 every 100
+
+	compute subtemp1 heat1 temp
+	compute subtemp2 heat2 temp
+	thermo_style custom step temp c_subtemp1 c_subtemp2
+	thermo_modify lost ignore flush yes
+	thermo	     1000
+
+	
+	fix zwalls all wall/reflect zhi 150 units box
+	fix  5 bottom setforce 0.0 0.0 0.0
+	velocity bottom set 0.0 0.0 0.0
+
+	fix NVE all nve/limit 0.5
+	fix 2 free langevin 1450 1450 $(400.0*dt) 699483
+	
+	#restart 50000 restart.*
+	run 100000
+	
+	unfix NVE
+	unfix 2
+	
+write_restart NVE_substrate.restart
+	
+
+restart 600000 restart.*
+variable a loop 100000
+label loopa
+
+	create_atoms 1 random 4 $(v_a*10+13) 10  ## Mo 
+	create_atoms 2 random 8 $(v_a*20+13) 10  ## S 
+
+	
+	group       rain region 10
+	velocity rain create 650 4928459 rot yes dist gaussian
+	velocity rain set NULL NULL -0.1 sum yes units box 
+
+	fix NVE all nve/limit 0.5
+	fix 2 heat1 langevin 1450 1450 $(400.0*dt) 65456 
+	
+	run 200000 
+	unfix 2
+	unfix NVE
+		
+	delete_atoms region 20
+	group rain delete
+
+
+next a
+jump prod_epitaxy.in loopa
+
+
+
+
+
+
+
+
+
