@@ -21,7 +21,7 @@ https://docs.lammps.org/pair_uf3.html
   Example substrate data file used as input for growth simulations
 
 - `SI.docx`  
-  Supplementary Information document accompanying the publication
+  Supplementary Information document accompanying the manuscript
 
 
 ---
