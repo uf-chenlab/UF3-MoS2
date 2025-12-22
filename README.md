@@ -1,4 +1,4 @@
-# UF3-MoS₂ Machine Learned Interatomic Potential 
+# UF3-MoS₂ Machine-Learned Interatomic Potential 
 
 This repository provides a **UF3 machine-learned interatomic potential (MLIP) for MoS₂** developed to enable non-equilibrium molecular-dynamics simulations of epitaxial growth.  
 The potential is designed for use with **LAMMPS** via the **UF3 pair style**:  
