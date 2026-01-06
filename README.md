@@ -57,7 +57,7 @@ before compilation.
 
 ## Citation
 
-The associated work has been submitted for journal publication. A preprint manuscript is available here:
+The associated work is under review for journal publication. A preprint manuscript is available here:
 
 E. Bilgili, N. Taormina, R. Hennig, S. R. Phillpot, Y. Chen  
 *Ultra-Fast Machine-Learned Interatomic Potential for MoS₂ Enabling  
