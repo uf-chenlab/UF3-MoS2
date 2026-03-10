@@ -41,7 +41,7 @@ src/ML-UF3/pair_uf3.cpp
 Add the following line after the `TextFileReader` is constructed (should be at line 261) :
 
 ```cpp
- txtfilereader.set_bufsize(10240)  // REQUIRED MODIFICATION: increase the default 1024-character per line limit 
+ txtfilereader.set_bufsize(10240);  // REQUIRED MODIFICATION: increase the default 1024-character per line limit 
 ```
 
 Then compile LAMMPS.
