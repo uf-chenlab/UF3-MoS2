@@ -258,7 +258,7 @@ void PairUF3::uf3_read_unified_pot_file(char *potf_name)
 
   TextFileReader txtfilereader(fp, "UF3:POTFP");
   txtfilereader.ignore_comments = false;
-  txtfilereader.set_bufsize(10240)  // REQUIRED MODIFICATION: increase the 1024-character line limit 
+  txtfilereader.set_bufsize(10240);  // REQUIRED MODIFICATION: increase the 1024-character line limit 
 
   //while loop over the entire file, find blocks starting with #UF3 POT
   //if block found read the very next line to determine 2B or 3B block
