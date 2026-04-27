@@ -57,9 +57,7 @@ before compilation.
 
 ## Citation
 
-The associated work has been accepted for publication in Physical Review Materials. The citation will be updated soon. A preprint manuscript is available here:
+The associated work has been accepted for publication in Physical Review Materials. The citation will be updated soon. A preprint manuscript is available here:https://arxiv.org/abs/2512.15952
 
-E. Bilgili, N. Taormina, R. Hennig, S. R. Phillpot, Y. Chen  
-*Machine-Learned Interatomic Potential for Predictive Simulation of MoS₂ Epitaxy*  
-https://doi.org/10.48550/arXiv.2512.15952
+E. Bilgili, N. Taormina, R. Hennig, S.R. Phillpot, Y. Chen, Machine-Learned Interatomic Potential for Predictive Simulation of MoS2 Epitaxy. Physical Review Materials, 2026. doi: /10.1103/71xp-pjb6.
 
