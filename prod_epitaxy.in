@@ -1,4 +1,4 @@
-
+### this is an example input script for epitaxial growth simulation 
 clear
 units             metal
 atom_style        atomic
