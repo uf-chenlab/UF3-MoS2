@@ -1,7 +1,6 @@
 # UF3-MoS₂ Machine-Learned Interatomic Potential 
 
-This repository provides a **UF3 machine-learned interatomic potential (MLIP) for MoS₂** developed to enable molecular-dynamics simulations of epitaxial growth.  
-The potential is designed for use with **LAMMPS** via the **UF3 pair style**:https://docs.lammps.org/pair_uf3.html
+This repository provides a **UF3 machine-learned interatomic potential (MLIP) for MoS₂** developed to enable molecular-dynamics simulations of epitaxial growth. The potential is designed for use with **LAMMPS** via the **UF3 pair style**:https://docs.lammps.org/pair_uf3.html
 
 
 
@@ -43,9 +42,7 @@ Then compile LAMMPS.
 **This 'issue' has been addressed in the offical UF3 repository: https://github.com/uf3/uf3/issues/136** 
 
 
-For convenience, a modified pair_uf3.cpp file with this change already applied is provided in this
-repository. Users may either apply the one-line change manually or replace the UF3 pair style source file
-before compilation.
+For convenience, a modified pair_uf3.cpp file with this change already applied is provided in this repository. Users may either apply the one-line change manually or replace the UF3 pair style source file before compilation.
 
 ---
 
