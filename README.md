@@ -1,27 +1,21 @@
 # UF3-MoS₂ Machine-Learned Interatomic Potential 
 
 This repository provides a **UF3 machine-learned interatomic potential (MLIP) for MoS₂** developed to enable molecular-dynamics simulations of epitaxial growth.  
-The potential is designed for use with **LAMMPS** via the **UF3 pair style**:  
-https://docs.lammps.org/pair_uf3.html
+The potential is designed for use with **LAMMPS** via the **UF3 pair style**:https://docs.lammps.org/pair_uf3.html
 
 
 
 ## Repository Contents
 
-- `MoS2.UF3`  
-  UF3 potential file for MoS₂
+- `MoS2.UF3`: UF3 potential file for MoS₂
 
-- `pair_uf3.cpp`  
- UF3 pair style source file with a **one-line buffer-size modification** required to read long UF3 coefficient lines (>1024 characters). **The trivial patch is described below for completeness.**
+- `pair_uf3.cpp`: UF3 pair style source file with a **one-line buffer-size modification** required to read long UF3 coefficient lines (>1024 characters). **The trivial patch is described below for completeness.**
 
-- `prod_epitaxy.in`  
-  Example LAMMPS input script for non-equilibrium epitaxial growth simulations
+- `prod_epitaxy.in`: Example LAMMPS input script for non-equilibrium epitaxial growth simulations
 
-- `substrate_heated.data`  
-  Example substrate data file used as input for growth simulations
+- `substrate_heated.data`: Example substrate data file used as input for growth simulations
 
-- `Supplemental Material - UF3 MoS2.pdf`  
-  Supplementary Material accompanying the manuscript
+- `Supplemental Material - UF3 MoS2.pdf` : Copy of the supplementary material accompanying the associated publication
 
 
 ---
