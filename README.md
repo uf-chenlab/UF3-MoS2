@@ -20,7 +20,7 @@ https://docs.lammps.org/pair_uf3.html
 - `substrate_heated.data`  
   Example substrate data file used as input for growth simulations
 
-- `Supplemental Material-SM- UF3 MoS2.pdf`  
+- `Supplemental Material - UF3 MoS2.pdf`  
   Supplementary Material accompanying the manuscript
 
 
