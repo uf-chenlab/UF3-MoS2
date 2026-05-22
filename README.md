@@ -7,17 +7,11 @@ This repository provides a **UF3 machine-learned interatomic potential (MLIP) fo
 ## Repository Contents
 
 - `MoS2.UF3`: UF3 potential file for MoS₂
-
 - `pair_uf3.cpp`: UF3 pair style source file with a **one-line buffer-size modification** required to read long UF3 coefficient lines (>1024 characters). **The trivial patch is described below for completeness.**
-
 - `prod_epitaxy.in`: Example LAMMPS input script for non-equilibrium epitaxial growth simulations
-
 - `substrate_heated.data`: Example substrate data file used as input for growth simulations
-
 - `Supplemental Material - UF3 MoS2.pdf` : Copy of the supplementary material accompanying the associated publication
-- 
 - `MoS2-UF3.json`: Raw model file output during optimization using UF3Tools used to obtain the .UF3 potential files.
-- 
 -  **`MoS2_v2.UF3`** — UF3 potential file for MoS₂; uniform-knot (uk) version with fixed replusion. Potential parameters are functionally identical to `MoS2.UF3`, with two improvements:
 
      1. **~60% faster.** The potential is tagged with `uk`, indicating uniform knot spacing. Uniform knots allow the active B-spline interval to be located via O(1) index arithmetic rather than O(n) linear search, accelerating every energy and force evaluation. Knot positions are stored at full double precision to ensure correct boundary behavior in LAMMPS. This yields even higher computational speed than the performance reported in the associated publication (see **Sec. III F**).
